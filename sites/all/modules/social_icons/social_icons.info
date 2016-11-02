@@ -1,0 +1,6 @@
+name = Social icons
+description = Icons for social network
+package = Custom
+core = '7.x'
+files[] = social_icons.module
+configure = admin/config/administrations/social_icons
