@@ -19,15 +19,17 @@ regions[content] = Content
 regions[aside-right] = Aside Right
 regions[after-content] = After Content
 regions[after-main] = After Main
+regions[footer-left] = Footer Left
 regions[footer] = Footer
-
+regions[footer-right] = Footer Right
+regions[footer-right1] = Footer Right1
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = css/style.css
-
+;;stylesheets[all][] = css/bootstrap.css
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts
@@ -48,4 +50,5 @@ scripts[] = 'bootstrap/js/transition.js'
 ;;scripts[] = 'js/myscript.js'
 
 ; Disable the CDN provider so compiled source files can be used.
+;;settings[bootstrap_cdn] = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
 settings[bootstrap_cdn] = ''

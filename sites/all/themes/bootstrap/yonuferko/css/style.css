@@ -19,6 +19,16 @@ body{
   padding: 0px;
   }
 /*this is block*/
+li {
+  list-style-type: none;
+  color: #818181;
+  margin-top: 5px;
+}
+h2{
+  margin-left: 20px;
+  margin-bottom: 0;
+  padding: 0;
+}
 #first{
   max-width: 90%;
   background-color: #dcdcdc;
@@ -81,10 +91,13 @@ background-color: #dcdcdc;
   height: 40px;
   margin-left: 1100px;
 }
-#Before-Header-right img {
-
+/*#Before-Header-right img {
     height: 40px;
-
+}*/
+#Before-Header-right button {
+  height: 100%;
+  width: 120px;
+  background-image: url("/sites/all/themes/bootstrap/yonuferko/img/korz.jpg");
 }
 #Header {
   max-width: 50%;
@@ -111,14 +124,14 @@ background-color: #dcdcdc;
 #Slider {
   max-width: 100%;
   /*background-color:#f0005e;*/
-  height: 15%;
+  height: 10%;
   margin-top: 10px;
   text-align:  center;
 }
 #Before-Main {
   max-width: 100%;
   /*background-color: #ff1103;*/
-  height: 5%;
+  height: 2%;
   margin-top: 10px;
 
 }
@@ -170,13 +183,58 @@ background-color: #dcdcdc;
 #After-Main {
   max-width: 100%;
   /*background-color: #ff1103;*/
-  height: 5%;
+  height: 100px;
   margin-top: 10px;
 }
+
+#Footer-Left{
+  width: 25%;
+  height:160px;
+  /*background-color:#a47e3c;*/
+  float: left;
+  color: #2c2c2c;;
+}
 #Footer {
-  max-width: 50%;
+  width: 25%;
+  height:160px;
   /*background-color:#ffff66;*/
-  margin: auto;
-  height: 5%;
+  float: left;
+  color:#2c2c2c;
+}
+#Footer-Right{
+  width: 25%;
+  height:160px;
+  float:left;
+  color:#2c2c2c;
+ /* background-color:#a47e3c;*/
+}
+#Footer-Right button{
+  width: 25%;
+  height:160px;
+  float:left;
+  color:#2c2c2c;
+  /* background-color:#a47e3c;*/
+}
+#Footer-Right1{
+  height:160px;
+  background-color:#dcdcdc;
+  color:#2c2c2c;
+  margin-left: 0px;
+
+}
+#Footer-Right h2{
+   margin-left: 50px;
+ }
+
+#Footer-Right1 input{
+  background-color:#dcdcdc ;
+  width: 300px;
+
+}
+#Footer-Right1 h2{
+  text-align: center;
+  }
+#Footer-Right1 li{
+  text-align: center;
   margin-top: 10px;
 }

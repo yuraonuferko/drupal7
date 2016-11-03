@@ -1,0 +1,41 @@
+<?php
+function social_icons_menu() {
+
+  $items['admin/config/administration/social_icons'] = array(
+    'title' => 'Social icons',
+    'description' => 'Description',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('social_icons_setting_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+     );
+  return $items;
+}
+function social_icons_setting_form($form, &$form_state) {
+  $form['text'] = array(
+    '#title' => 'Title',
+    '#type' => 'textfield',
+    '#size' =>30,
+    '#required' => TRUE,
+  );
+  $form['link'] = array(
+    '#title' => 'Link',
+    '#type' => 'textfield',
+    '#size' =>30,
+    '#required' => TRUE,
+  );
+  $form['icon'] = array(
+    '#title' => 'Icon',
+    '#type' => 'file',
+    '#required' => TRUE,
+  );
+  $form['hover_icon'] = array(
+    '#title' => 'Hover Icon',
+    '#type' => 'file',
+  );
+  $form['submit'] = array(
+    '#value' => 'Submit',
+    '#type' => 'submit',
+  );
+  return $form;
+}
