@@ -19,10 +19,10 @@ regions[content] = Content
 regions[aside-right] = Aside Right
 regions[after-content] = After Content
 regions[after-main] = After Main
-regions[footer-left] = Footer Left
+
 regions[footer] = Footer
-regions[footer-right] = Footer Right
-regions[footer-right1] = Footer Right1
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheets
