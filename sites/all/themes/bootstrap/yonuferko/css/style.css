@@ -203,9 +203,10 @@ background-color: #dcdcdc;
 #Footer {
   width: 100%;
   color:#2c2c2c;
- /* background-color:#dcdcdc;*/
-  margin-top: 340px;
-  height: 160px;
+/* background-color:#dcdcdc;*/
+  margin-top: 380px;
+  height: 180px;
+  margin-bottom: 0;
 
 }
 

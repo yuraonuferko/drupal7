@@ -53,6 +53,8 @@
 
 <div  id="Footer">
   <?php print render($page['footer']); ?>
+  <br><br>
+
   <table>
   <tr>
     <th>Cлужба поддержки</th>

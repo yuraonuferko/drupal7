@@ -1,41 +1,76 @@
 <?php
 function social_icons_menu() {
-
   $items['admin/config/administration/social_icons'] = array(
     'title' => 'Social icons',
     'description' => 'Description',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('social_icons_setting_form'),
-    'access arguments' => array('administer site configuration'),
+    'access arguments' => array('administer_site_configuration'),
     'type' => MENU_NORMAL_ITEM,
      );
   return $items;
 }
-function social_icons_setting_form($form, &$form_state) {
-  $form['text'] = array(
+
+function social_icons_setting_form($form, $form_state) {
+  $form['setting'] = array(
+    '#title' => t('Add icon'),
+    '#type' => 'fieldset',
+    '#attributes' => array('class' => array('title')),
+    '#required' => TRUE,
+  );
+  $form['setting']['title'] = array(
     '#title' => 'Title',
     '#type' => 'textfield',
-    '#size' =>30,
+    '#maxlength' =>30,
     '#required' => TRUE,
   );
-  $form['link'] = array(
+  $form['setting']['link'] = array(
     '#title' => 'Link',
     '#type' => 'textfield',
-    '#size' =>30,
+    '#maxlength' =>128,
     '#required' => TRUE,
   );
-  $form['icon'] = array(
+  $form['setting']['icon'] = array(
     '#title' => 'Icon',
     '#type' => 'file',
-    '#required' => TRUE,
+
+    //'#required' => TRUE,
   );
-  $form['hover_icon'] = array(
+  $form['setting']['hover_icon'] = array(
     '#title' => 'Hover Icon',
     '#type' => 'file',
-  );
+
+   // '#required' => TRUE,
+    );
   $form['submit'] = array(
-    '#value' => 'Submit',
+
     '#type' => 'submit',
+    '#value' => 'Submit',
   );
   return $form;
+}
+function social_icons_setting_form_validate($form_id, $form_state) {
+
+  if ($form_state['values']['title'] == 'Title'){
+    form_set_error('title','"Title" do not validate this form');
+  }
+  $pattern1 = preg_match('/^http:\/\/.*\.jpg/',$form_state['values']['link']);
+  $pattern2 = preg_match('/^http:\/\/.*\.png/',$form_state['values']['link']);
+  $pattern3 = preg_match('/^http:\/\/.*\.ico/',$form_state['values']['link']);
+  $pattern4 = preg_match('/^http:\/\/.*\.gif/',$form_state['values']['link']);
+  $pattern5 = preg_match('/^https:\/\/.*\.jpg/',$form_state['values']['link']);
+  $pattern6 = preg_match('/^https:\/\/.*\.png/',$form_state['values']['link']);
+  $pattern7 = preg_match('/^https:\/\/.*\.ico/',$form_state['values']['link']);
+  $pattern8 = preg_match('/^https:\/\/.*\.gif/',$form_state['values']['link']);
+  $pattern9 = preg_match('/^ftp:\/\/.*\.jpg/',$form_state['values']['link']);
+  $pattern10 = preg_match('/^ftp:\/\/.*\.png/',$form_state['values']['link']);
+  $pattern11 = preg_match('/^ftp:\/\/.*\.ico/',$form_state['values']['link']);
+  $pattern12 = preg_match('/^ftp:\/\/.*\.gif/',$form_state['values']['link']);
+
+  if (!($pattern1 || $pattern2 || $pattern3 || $pattern4 ||
+      $pattern5 || $pattern6 || $pattern7 || $pattern8 ||
+      $pattern9 || $pattern10 || $pattern11 || $pattern12)) {
+      form_set_error('link','"Link" must be to begin only from http://,
+      https://,ftp:// format .jpg,.ico,.png,.gif');
+    }
 }
