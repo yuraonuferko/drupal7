@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="87f9b993-8019-4afe-9961-d84e228b00c7" name="onufrienko" url="http://onufrienko.it-dev-lab.com">
+        <fileTransfer explicitFtps="false" host="onufrienko.it-dev-lab.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

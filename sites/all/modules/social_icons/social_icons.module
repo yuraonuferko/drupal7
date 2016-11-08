@@ -32,13 +32,13 @@ function social_icons_setting_form($form, $form_state) {
   );
   $form['setting']['icon'] = array(
     '#title' => 'Icon',
-    '#type' => 'file',
+    '#type' => 'managed_file',
 
     //'#required' => TRUE,
   );
   $form['setting']['hover_icon'] = array(
     '#title' => 'Hover Icon',
-    '#type' => 'file',
+    '#type' => 'managed_file',
 
    // '#required' => TRUE,
     );
