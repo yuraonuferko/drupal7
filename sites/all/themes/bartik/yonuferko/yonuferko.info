@@ -19,6 +19,8 @@ regions[content] = Content
 regions[aside-right] = Aside Right
 regions[after-content] = After Content
 regions[after-main] = After Main
+regions[note-left] = Note Left
+regions[note-right] = Note Right
 
 regions[footer] = Footer
 

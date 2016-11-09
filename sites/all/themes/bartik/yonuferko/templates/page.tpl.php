@@ -52,6 +52,12 @@
 <div id="After-Main">
     <?php print render($page['after-main']); ?>
 </div>
+<div id="Note-Left">
+  <?php print render($page['note-left']); ?>
+</div>
+<div id="Note-Right">
+  <?php print render($page['note-right']); ?>
+</div>
 
 <div  id="Footer">
   <?php print render($page['footer']); ?>
@@ -93,9 +99,5 @@
     <td></td>
   </tr>
 </table>
-
-
-
-
   </div>
 

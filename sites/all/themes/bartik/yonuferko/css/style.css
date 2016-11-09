@@ -104,6 +104,7 @@ display: inline;
   background-color: #0000AA;
   margin: auto;
   margin-top: 5px;
+
 }
 #Header img {
   margin-left: calc(50% - 68px);
@@ -128,9 +129,12 @@ display: inline;
 }
 #Before-Main {
   max-width: 100%;
-  /*background-color: #ff1103;*/
+  background-color: #ff1103;
   margin-top: 10px;
+
 }
+
+
 #Before-Content {
   max-width: 50%;
  /* background-color:#ffff66;*/
@@ -173,6 +177,7 @@ display: inline;
 
   margin-top: 10px;
 
+
 }
 
 #After-Content table th {
@@ -188,8 +193,10 @@ display: inline;
 }
 #After-Main {
   max-width: 100%;
-  /*background-color: #ff1103;*/
+
   margin-top: 10px;
+  margin-bottom: 0;
+
 }
 #Footer {
   width: 100%;
@@ -198,6 +205,7 @@ display: inline;
   margin-top: 550px;
   height: 180px;
   margin-bottom: 0;
+
 }
 
 #Footer table {
@@ -218,4 +226,91 @@ display: inline;
   color:#2c2c2c;
   padding-left: 30px;
 }
+#secondmenu table {
+  width: 90%;
+  margin: auto;
+  height: 40px;
+  background-color: #fafafa;
+  border: 5px double #fafafa; /* Рамка вокруг таблицы */
+  }
+#secondmenu table td {
+  width: 120px;
+  height: 40px;
+  background-color: #fafafa;
+  text-align: center;
 
+}
+#secondmenu a {
+  text-decoration: none;
+  color: #2c2c2c;
+}
+#secondmenu a:hover {
+  text-decoration: underline;
+  color: #2c2c2c;
+}
+#separator{
+  border-bottom-width: 5px; /* Толщина линии внизу */
+  border-bottom-style: solid; /* Стиль линии внизу */
+  border-bottom-color: #7abd30; /* Цвет линии внизу */
+margin-top: 10px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#Note-Left{
+  margin: 0;
+  width: 20%;
+  float: left;
+  padding-left: 5%;
+  margin-top: 20px;
+  height: 200px;
+}
+#Note-Left input{
+  margin-top:10px;
+
+}
+#Note-Right{
+  width: 80%;
+  margin-left: 380px;
+  margin-top: 8px;
+}
+#Note-Right p{
+  width: 470px;
+  margin-left: 20px;
+
+}
+.field-name-field-img{
+  width: 490px;
+}
+.field-type-text-with-summary{
+  width: 500px;
+  float: left;
+}
+
+.field-items {
+  width: 800px;
+  margin-left: 150px;
+
+}
+.field-items a{
+
+  margin-left: 270px;
+  background-color:#7abd30;
+  text-decoration: none;
+  color: white;
+  width: 60px;
+
+}
+.date-display-single{
+  margin-left: 250px;
+
+}
+/*.group-left  div{
+  width: 500px;
+
+}
+.group-right  div{
+  width: 100px;
+  float: left;
+
+}*/
