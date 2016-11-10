@@ -1,6 +1,7 @@
 <div id="first">
     <div class="bef-hed" id="Before-Header">
         <?php print render($page['before_header']); ?>
+
     </div>
     <div id="Before-Header-centr"><!--(044) 963 25 14
         <p> с 10:00 до 20:00<p>-->
@@ -15,6 +16,7 @@
 </div>
 <div id="Header">
     <?php print render($page['header']); ?>
+  <?php //print_r($page)?>
     <!-- visible logo-->
     <?php //if ($title == ""): ?>
      <!-- <img  src="/sites/all/themes/bootstrap/yonuferko/img/logo2.png" alt="logo">
@@ -60,8 +62,9 @@
 </div>
 
 <div  id="Footer">
+
   <?php print render($page['footer']); ?>
-  <br><br>
+  <!--<br><br>
 
   <table>
   <tr>
@@ -98,6 +101,7 @@
     <td>Производители</td>
     <td></td>
   </tr>
-</table>
+</table>-->
+
   </div>
 

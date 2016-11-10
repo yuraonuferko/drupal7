@@ -192,6 +192,8 @@
           <?php print $title; ?>
         </h1>
       <?php endif; ?>
+        <?php //dpm($page)?>
+
       <?php print render($title_suffix); ?>
       <?php if ($tabs): ?>
         <div class="tabs">
