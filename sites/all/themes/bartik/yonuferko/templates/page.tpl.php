@@ -1,7 +1,6 @@
 <div id="first">
     <div class="bef-hed" id="Before-Header">
         <?php print render($page['before_header']); ?>
-
     </div>
     <div id="Before-Header-centr"><!--(044) 963 25 14
         <p> с 10:00 до 20:00<p>-->
@@ -16,7 +15,6 @@
 </div>
 <div id="Header">
     <?php print render($page['header']); ?>
-  <?php //print_r($page)?>
     <!-- visible logo-->
     <?php //if ($title == ""): ?>
      <!-- <img  src="/sites/all/themes/bootstrap/yonuferko/img/logo2.png" alt="logo">
@@ -26,8 +24,9 @@
 </div>
 
 <div id="Slider">
-    <?php print render($page['slider']); ?>
-    <?php //print $title; ?>
+
+  <?php print render($page['slider']); ?>
+
 </div>
 
 <div id="Before-Main">
@@ -54,17 +53,44 @@
 <div id="After-Main">
     <?php print render($page['after-main']); ?>
 </div>
+
+
 <div id="Note-Left">
-  <?php print render($page['note-left']); ?>
+  <?php //if ($title != "Page_news_browse"):
+          print render($page['note-left']);
+        //endif;
+  ?>
 </div>
+
+
+
 <div id="Note-Right">
-  <?php print render($page['note-right']); ?>
+  <?php //if ($title != "Page_news_browse"):
+    print render($page['note-right']);
+  //endif;
+  ?>
 </div>
+<div id="News-Browse">
+  <?php print render($page['news-browse']); ?>
+</div>
+<div id = "news">
+<div id="News-Left">
+  <?php print render($page['news-left']); ?>
+</div>
+<div id="News-Center">
+  <?php print render($page['news-center']); ?>
+</div>
+<div id="News-Right">
+  <?php print render($page['news-right']); ?>
+</div>
+</div>
+
+
+
 
 <div  id="Footer">
-
   <?php print render($page['footer']); ?>
-  <!--<br><br>
+  <br><br>
 
   <table>
   <tr>
@@ -101,7 +127,6 @@
     <td>Производители</td>
     <td></td>
   </tr>
-</table>-->
-
+</table>
   </div>
 

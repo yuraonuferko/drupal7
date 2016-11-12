@@ -1,3 +1,6 @@
+<?php/*1.  print $block_html_id;
+2. create file name=($block_html_id).tpl.php
+*/ ?>
 <?php
 
 /**
@@ -44,8 +47,11 @@
  * @ingroup themeable
  */
 ?>
+
 <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
+  <?php //print $block->module; ?>
+  <?php //print $block->delta; ?>
   <?php print render($title_prefix); ?>
 <?php if ($block->subject): ?>
   <h2<?php print $title_attributes; ?>><?php print $block->subject ?></h2>

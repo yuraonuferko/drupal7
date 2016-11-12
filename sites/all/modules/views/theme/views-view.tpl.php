@@ -27,6 +27,7 @@
  * @ingroup views_templates
  */
 ?>
+
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
@@ -54,6 +55,7 @@
   <?php if ($rows): ?>
     <div class="view-content">
       <?php print $rows; ?>
+
     </div>
   <?php elseif ($empty): ?>
     <div class="view-empty">
@@ -73,6 +75,7 @@
 
   <?php if ($more): ?>
     <?php print $more; ?>
+
   <?php endif; ?>
 
   <?php if ($footer): ?>

@@ -21,6 +21,10 @@ regions[after-content] = After Content
 regions[after-main] = After Main
 regions[note-left] = Note Left
 regions[note-right] = Note Right
+regions[news-browse] = News Browse
+regions[news-left] = News Left
+regions[news-center] = News Center
+regions[news-right] = News Right
 
 regions[footer] = Footer
 
