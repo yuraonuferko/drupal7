@@ -1,3 +1,4 @@
+
 <div id="first">
     <div class="bef-hed" id="Before-Header">
         <?php print render($page['before_header']); ?>
@@ -40,7 +41,8 @@
         <?php print render($page['aside-left']); ?>
     </div>
     <div id="Content">
-        <?php print render($page['content']); ?>
+      <?php  //dpm($page); ?>
+      <?php print render($page['content']); ?>
     </div>
     <div id="Aside-Right">
         <?php print render($page['aside-right']); ?>

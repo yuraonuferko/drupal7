@@ -1,3 +1,4 @@
+<?php
 /**
  * Implements hook_schema().
  */
@@ -26,15 +27,15 @@ function social_icons_schema() {
       ),
       'icon' => array(
         'description' => 'Text field for icon.',
-        'type' => 'varchar',
-        'length' => 256,
+        'type' => 'int',
+        'length' => 4,
         'not null' => TRUE,
       ),
       'hover_icon' => array(
               'description' => 'Text field for hover icon.',
-              'type' => 'varchar',
+              'type' => 'int',
               'not null' => TRUE,
-              'length' => 256,
+              'length' => 4,
             ),
     ),
     'primary key' => array('id'),
@@ -44,3 +45,4 @@ function social_icons_schema() {
   );
   return $schema;
 }
+
