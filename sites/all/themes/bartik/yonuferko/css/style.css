@@ -322,7 +322,7 @@ span.date-display-single {
 }
 #news{
   width: 100%;
-  background-color: #0c9c0d;
+  /*background-color: #0c9c0d;*/
   margin: auto;
   padding-left: 5%;
   padding-right:5%px;
@@ -342,7 +342,7 @@ margin: 0;
 #News-Right{
   margin-left: 60%;
   width: 30%;
-  background-color: darkviolet;
+  /*background-color: darkviolet;*/
 }
 .news_img {
   margin-top: 20px;

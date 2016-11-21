@@ -1,4 +1,5 @@
 <?php
+module_load_include('inc', 'social_icons', 'includes/social_icons.block');
 function social_icons_menu() {
   $items['admin/config/administration/social_icons'] = array(
     'title' => 'Social Icons',
@@ -58,8 +59,10 @@ function social_icons_menu() {
     'type' => MENU_CALLBACK,
   );
   return $items;
-
 }
+/*http://xandeadx.ru/blog/drupal/352
+Використано як приклад
+*/
 function social_icons_entity_info() {
   return array(
     'social_icons' => array(                               // Системное имя сущности
@@ -87,8 +90,10 @@ function social_icons_entity_info() {
     ),
   );
 }
-/**
- * Проверка прав доступа
+/** Вивід у формі блока**/
+ /* Проверка прав доступа
+ http://xandeadx.ru/blog/drupal/352
+Використано як приклад
  */
 function social_icons_access($op, $entity, $account = NULL, $entity_type = 'social_icons') {
   return user_access('administer site configuration'); // сущность будет доступна только администратору сайта
@@ -100,9 +105,9 @@ function social_icons_load($id) {
 function _image_array($fid) {
   $variables = array();
   $variables['path'] = file_load($fid)->uri;
-  $variables['width'] = '50px';
-  $variables['height'] = '50px';
-  $variables['attributes'] = array('class' => 'some-img', 'id' => 'my-img');
+  $variables['width'] = variable_get('width');
+  $variables['height'] = variable_get('height');
+  $variables['attributes'] = array('class' => 'some-img', 'id' => $fid);
   return $variables;
 }
 function social_icons_list() {
@@ -173,8 +178,8 @@ function social_icons_setting_form($form, &$form_state) {
   return $form;
 }
 /* валідація**/
+/*http://drupalfly.ru/lesson/form-api-2*/
 function social_icons_setting_form_validate($form_id, $form_state) {
-
   if ($form_state['values']['title'] == 'Title'){
     form_set_error('title','"Title" do not validate this form');
   }
@@ -190,11 +195,6 @@ function social_icons_setting_form_validate($form_id, $form_state) {
     'file_validate_extensions' => array('png gif jpg jpeg'), // Проверка на расширения
     'file_validate_size' => array(1 * 1024 * 1024), // Проверка на размер файла (максимум 1mb)
   );
-  // Загружаем файл в sites/default/files (по умолчанию)
-  $icon = file_save_upload('icon', $validators, 'public://');
-  $hover_icon = file_save_upload('hover_icon', $validators, 'public://');
-  $form_state['values']['icon'] = $icon; // передаём информацию о файле в ф-ю mymodule_form_submit()
-  $form_state['values']['hover_icon'] = $hover_icon;
 }
 
 /** обробка форми**/
@@ -206,10 +206,13 @@ function social_icons_setting_form_submit($form, &$form_state) {
   $social_icons['hover_icon'] = $form_state['values']['hover_icon'];
   $social_icons = entity_create('social_icons',$social_icons );
   $social_icons = entity_save('social_icons', $social_icons);
-
   if ($social_icons) {
     drupal_set_message(t('Form submit'));
   }
+  $icon = file_load($form_state['values']['icon']);
+  file_save($icon); // Сохраняем новый статус
+  $hover_icon = file_load($form_state['values']['hover_icon']);
+  file_save($hover_icon); // Сохраняем новый статус
   $form_state['redirect'] = 'admin/config/administration/social_icons';
 }
 /* function view for  tab "delete"*/
@@ -226,7 +229,6 @@ function social_icons_list_del(){
     'Actions'
   );
   $rows = array();
-
   foreach ($social_icons as $id) {
     $entity = social_icons_load($id->id);
     $actions = array(
@@ -346,18 +348,12 @@ function edit_form($form,&$form_state) {
     '#title' => 'Hover Icon',
     '#type' => 'managed_file',
     '#default_value' => $entity->hover_icon,
-
   );
   $form['submit'] = array(
-
     '#type' => 'submit',
     '#value' => 'Save',
-    //'#submit' =>'social_icon_edit_form_submit',
+
   );
-  /*$form['debug']= array(
-    '#title' => '',
-    '#type' => 'fieldset'
-  );*/
   return $form;
 }
 function edit_form_submit($form, &$form_state) {
@@ -372,11 +368,4 @@ function edit_form_submit($form, &$form_state) {
     drupal_set_message('Icons editing');
     $form_state['redirect'] = 'admin/config/administration/social_icons';
   }
-  //$form_state['redirect'] = 'admin/config/administration/social_icons';
-  /*$form['debug']= array(
-    '#title' => $form_state['values']['link'],
-    '#type' => 'fieldset',
-  );
-  return $form;*/
-
 }

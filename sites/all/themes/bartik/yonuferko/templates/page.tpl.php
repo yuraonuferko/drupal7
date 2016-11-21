@@ -41,7 +41,8 @@
         <?php print render($page['aside-left']); ?>
     </div>
     <div id="Content">
-      <?php  //dpm($page); ?>
+      <?php  //
+      //dpm($page); ?>
       <?php print render($page['content']); ?>
     </div>
     <div id="Aside-Right">
